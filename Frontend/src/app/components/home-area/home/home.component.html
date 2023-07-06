@@ -1,0 +1,23 @@
+<div class="main">
+
+
+    <table>
+        <tr>
+          <th>Task #</th>
+          <th>Description</th>
+          <th>Date and Time</th>
+          <th>Customer Name </th>
+          <th>Done?</th>
+          <th>Delete Task</th>
+        </tr>
+        <tr *ngFor="let t of allTasks">
+          <td>{{t.id}}</td>
+          <td>{{t.description}}</td>
+          <td>{{t.date}}</td>
+          <td>{{allCustomers[t.customer_id-1].name }}</td>
+          <td class="done" *ngIf="t.if_done===0" (click)="done(t.id)">לא בוצע, לחץ כאן להגדיר בוצע!</td>
+          <td *ngIf="t.if_done===1" > &#9989; בוצע</td>
+          <td class="trash" (click)="del(t.id)"><b>🗑</b></td>
+        </tr>
+      </table>
+</div>

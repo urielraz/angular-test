@@ -1,0 +1,26 @@
+<div class="box">
+
+    <form (ngSubmit)="send()">
+
+        <h1>Add Task</h1>
+
+        <label>
+            <span>description of the task:</span>
+            <input type="text" name="description" [(ngModel)]="task.description">
+        </label>
+
+        <br>
+        <br>
+        <label>customer:
+            <select name="customer_id" [(ngModel)]="task.customer_id" >
+                <option >Select Customer...</option>
+                <option *ngFor="let c of allCustomers"  >{{c.customer_id}} - {{c.name}}</option>
+            </select>
+        </label>
+
+        <button>Save</button>
+
+
+
+    </form>
+</div>
